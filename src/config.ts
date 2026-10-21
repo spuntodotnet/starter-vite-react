@@ -24,3 +24,7 @@ export const config = {
   saturation: 72,
   lightness: 52,
 }
+
+// A change here restarts the game with the new numbers: the page reloads rather than swapping
+// modules under a game that is already running with the old ones.
+if (import.meta.hot) import.meta.hot.accept(() => window.location.reload())
